@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(75, 54, 124);
+
+}
+
+#twitch-embed {
+margin-left: 25vw;
+margin-top: 10vh;
+}
+
+#title {
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 3vh
+}
