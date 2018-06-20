@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
     <title>TwitchCloud</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico">
@@ -14,12 +15,21 @@
 
   <body>
   <div class="container-fluid">
+
     <img src="logo.png" alt="TwitchCloud" class="img-responsive" id="title">
+
+    <div class="row">
+      <div class="col-md-1">
+        <input type="text" placeholder="Channel">
+      </div>
+      <div class="col-md-1">
+        <button class="btn-primary btn ">Submit</button>
+        </div>
+    </div>
 
     <!-- Add a placeholder for the Twitch embed -->
     <div id="twitch-embed"></div>
-
-    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+      <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
     <script>
       embedTwitch();
     </script>

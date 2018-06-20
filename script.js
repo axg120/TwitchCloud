@@ -1,8 +1,13 @@
 function embedTwitch() {
+  var vh = window.innerHeight;
+  var vw = window.innerWidth;
+
+  height = vh * .5;
+  width = vw * .5;
   new Twitch.Embed("twitch-embed", {
-    width: 1000,
-    height: 520,
-    channel: "ninja",
+    width: width,
+    height: height,
+    channel: "twitch",
     theme: "dark"
   });
 }
