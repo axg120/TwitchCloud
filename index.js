@@ -21,8 +21,8 @@ var opts = {
 
 // Create a client with our options:
 var client = new tmi.client(opts);
-client.connect();
+//client.connect();
 
 client.on("chat", function(channel, user, message, self) {
-  console.log(message);
+  //console.log(message);
 });
