@@ -1,0 +1,22 @@
+{
+  "name": "twitchcloud",
+  "version": "1.0.0",
+  "description": "Generates word cloud based on twitch chat",
+  "main": "chat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/axg120/TwitchCloud.git"
+  },
+  "author": "Andy Gin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axg120/TwitchCloud/issues"
+  },
+  "homepage": "https://github.com/axg120/TwitchCloud#readme",
+  "dependencies": {
+    "tmi.js": "^1.2.1"
+  }
+}

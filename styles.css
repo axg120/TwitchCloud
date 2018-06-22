@@ -5,7 +5,7 @@ body {
 #twitch-embed {
   display: table;
   margin: 0 auto;
-  margin-top: 20vh;
+  margin-top: 5vh;
 }
 
 #title {
@@ -15,4 +15,14 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 3vh;
+}
+
+#channel {
+  display: table;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
+
+#input {
+  width: 30vw;
 }

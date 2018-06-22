@@ -4,7 +4,7 @@ function embedTwitch() {
 
   height = vh * .5;
   width = vw * .5;
-  new Twitch.Embed("twitch-embed", {
+  var embed = new Twitch.Embed("twitch-embed", {
     width: width,
     height: height,
     channel: "twitch",

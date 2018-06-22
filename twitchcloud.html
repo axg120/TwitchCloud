@@ -18,14 +18,10 @@
 
     <img src="logo.png" alt="TwitchCloud" class="img-responsive" id="title">
 
-    <div class="row">
-      <div class="col-md-1">
-        <input type="text" placeholder="Channel">
-      </div>
-      <div class="col-md-1">
-        <button class="btn-primary btn ">Submit</button>
-        </div>
-    </div>
+    <form action="/change-channel" class="form-inline" id="channel">
+      <input type="text" placeholder="Channel" class="form-control" id="input" required>
+      <button type="submit" class="btn btn-primary">Change</button>
+    </form>
 
     <!-- Add a placeholder for the Twitch embed -->
     <div id="twitch-embed"></div>
