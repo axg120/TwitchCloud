@@ -5,7 +5,7 @@ var opts = {
     username: 'twitchcloudbot',
     password: 'oauth:5qbcbkk0hexlw3hdo14a8q0hqi04lt'
   },
-  channels: ['shiphtur']
+  channels: ['ninja']
 };
 
 // Create a client with our options:
