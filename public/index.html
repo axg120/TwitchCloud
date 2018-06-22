@@ -4,13 +4,15 @@
     <title>TwitchCloud</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico">
+    <script src="dependencies/jquery-3.3.1.min.js"></script>
+    <script src="dependencies/socket.io.js"></script>
 
     <!-- Load the Twitch embed script -->
-    <script src="embed/v1.js"></script>
-    <script src="script.js"></script>
+    <script src="dependencies/v1.js"></script>
+    <script src="embed.js"></script>
   </head>
 
   <body>
@@ -20,8 +22,7 @@
 
     <form action="/change-channel" class="form-inline" id="channel">
       <input type="text" placeholder="Channel" class="form-control" id="input" required>
-      <button type="submit" class="btn btn-primary"
-      >Change</button>
+      <button type="submit" class="btn btn-primary">Change</button>
     </form>
 
     <!-- Add a placeholder for the Twitch embed -->
@@ -31,6 +32,10 @@
       embedTwitch();
     </script>
 
+    <div id="messages">fda</div>
+
   </div>
+
+  <script src="script.js"></script>
   </body>
 </html>

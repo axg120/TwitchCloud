@@ -1,13 +1,7 @@
-function embedTwitch() {
-  var vh = window.innerHeight;
-  var vw = window.innerWidth;
+//make connection
+var socket = io.connect("http://localhost:1000");
 
-  height = vh * .5;
-  width = vw * .5;
-  var embed = new Twitch.Embed("twitch-embed", {
-    width: width,
-    height: height,
-    channel: "twitch",
-    theme: "dark"
-  });
-}
+socket.on("chat", function(data) {
+  var messages = document.getElementById("messages")
+  $("#messages").append("<p>" + data.text + "</p>");
+});

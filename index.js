@@ -11,6 +11,7 @@ var server = app.listen(1000, function() {
 //static files
 app.use(express.static("public"));
 
+//twitch embed options
 var opts = {
   identity: {
     username: "twitchcloudbot",
@@ -19,10 +20,19 @@ var opts = {
   channels: ["ninja"]
 };
 
-// Create a client with our options:
-var client = new tmi.client(opts);
-//client.connect();
+//socket setup
+var io = socket(server);
 
-client.on("chat", function(channel, user, message, self) {
-  //console.log(message);
+io.on("connection", function(socket) {
+  console.log("socket connection created", socket.id);
+
+  // Create a client with our options:
+  var client = new tmi.client(opts);
+  client.connect();
+
+  client.on("chat", function(channel, user, message, self) {
+    io.sockets.emit("chat", {
+      text: message
+    });
+  });
 });
