@@ -2,6 +2,15 @@ var express = require("express");
 var socket = require("socket.io");
 var tmi = require("tmi.js");
 
+//app setup
+var app = express();
+var server = app.listen(1000, function() {
+  console.log("listening on requests to port 1000")
+});
+
+//static files
+app.use(express.static("public"));
+
 var opts = {
   identity: {
     username: "twitchcloudbot",
