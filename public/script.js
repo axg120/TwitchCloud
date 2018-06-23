@@ -7,11 +7,16 @@ socket.on("chat", function(data) {
 });
 
 $("#channelBtn").click(function() {
-  $("iframe").remove();
-  var next = $("#input").val()
-  embedTwitch(next);
+  var next = $("#input").val();
+  if(next.trim() == "") alert("Enter Channel Name!");
 
-  socket.emit("change", {
-    channel: next
-  });
+  else {
+    $("iframe").remove();
+
+    embedTwitch(next);
+
+    socket.emit("change", {
+      channel: next
+    });
+  }
 });
