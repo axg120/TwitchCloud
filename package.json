@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/axg120/TwitchCloud#readme",
   "dependencies": {
+    "canvas": "^1.6.11",
     "express": "^4.16.3",
     "nodemon": "^1.17.5",
     "socket.io": "^2.1.1",
