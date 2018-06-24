@@ -86,7 +86,7 @@ function wordcloud() {
 }
 
 function showNewWords(vis) {
-    if(words.length >= 200) words = words.splice(0, 100);
+    if(words.length >= 200) words = words.splice(100, 200);
     console.log(words)
     vis.update(words)
     setTimeout(function() { showNewWords(vis)}, 3000)
