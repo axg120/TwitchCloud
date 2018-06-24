@@ -26,3 +26,11 @@ body {
 #input {
   width: 30vw;
 }
+
+#generate {
+  height: 3em;
+  width: 10em;
+  display: table;
+  margin: 0 auto;
+  margin-top: 5vh;
+}
