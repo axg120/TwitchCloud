@@ -40,4 +40,9 @@ io.on("connection", function(socket) {
       text: message
     });
   });
+
+  socket.on("disconnecting", function() {
+    client.part(client.getChannels()[0]);
+    client.join("twitch");
+  })
 });

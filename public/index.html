@@ -9,6 +9,8 @@
     <link rel="icon" href="favicon.ico">
     <script src="dependencies/jquery-3.3.1.min.js"></script>
     <script src="dependencies/socket.io.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="dependencies/d3.layout.cloud.js"></script>
 
     <!-- Load the Twitch embed script -->
     <script src="dependencies/v1.js"></script>
@@ -32,11 +34,7 @@
         embedTwitch();
       </script>
 
-    <button class="btn btn-primary btn-lg" id="generate">Generate</button>
-
-    <div id="wordcloud">
-      <script src="wordcloud.js"></script>
-    </div>
+    <div id="wordcloud"></div>
 
   </div>
 

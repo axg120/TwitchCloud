@@ -27,9 +27,7 @@ body {
   width: 30vw;
 }
 
-#generate {
-  height: 3em;
-  width: 10em;
+#wordcloud {
   display: table;
   margin: 0 auto;
   margin-top: 5vh;
