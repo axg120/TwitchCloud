@@ -30,23 +30,23 @@ var height = vh * .5;
 var width = vw * .5;
 
 var layout = d3.layout.cloud().size([width, height]);
+var svg = d3.select("#wordcloud").append("svg")
+  .attr("width", width)
+  .attr("height", height)
+  .append("g")
+  .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+
 var color = d3.scaleOrdinal(d3.schemeSet3);
 
 function draw(words) {
-  if(words.length >= 100) words = words.splice(0, 50);
-  $("#wordcloud").empty();
-  var cloud = d3.select("#wordcloud").append("svg")
-      .attr("width", layout.size()[0])
-      .attr("height", layout.size()[1])
-    .append("g")
-      .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
-    .selectAll("text")
-      .data(words);
+  var cloud = svg.selectAll("text")
+    .data(words, function(d) { return d.text; });
 
-  cloud.enter().append("text")
+  cloud.enter()
+    .append("text")
     .style("font-size", function(d) { return d.size + "px"; })
     .style("font-family", "Impact")
-    .attr("fill",function(d,i){return color(i);})
+    .style("fill",function(d, i){return color(i);})
     .attr("text-anchor", "middle")
     .attr("transform", function(d) {
       return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
@@ -69,14 +69,28 @@ function draw(words) {
     .remove();
 }
 
-setInterval(function() {
-  layout.words(words.map(function(d) {
-      return {text: d, size: 10 + Math.random() * 90, test: "haha"};
-    }))
-    .padding(5)
-    .rotate(function() { return ~~(Math.random() * 2); })
-    .font("Impact")
-    .fontSize(function(d) { return d.size; })
-    .on("end", draw)
-    .start();
-}, 3000);
+function wordcloud() {
+  return {
+    update: function(words) {
+      layout.words(words.map(function(d) {
+        return {text: d, size: 10 + Math.random() * 90, test: "haha"};
+      }))
+      .padding(5)
+      .rotate(function() { return ~~(Math.random() * 2); })
+      .font("Impact")
+      .fontSize(function(d) { return d.size; })
+      .on("end", draw)
+      .start();
+    }
+  }
+}
+
+function showNewWords(vis) {
+    if(words.length >= 200) words = words.splice(0, 100);
+    console.log(words)
+    vis.update(words)
+    setTimeout(function() { showNewWords(vis)}, 3000)
+}
+
+var myWordCloud = wordcloud();
+showNewWords(myWordCloud);
