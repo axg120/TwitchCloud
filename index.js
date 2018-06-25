@@ -17,6 +17,9 @@ var opts = {
     username: "twitchcloudbot",
     password: "oauth:5qbcbkk0hexlw3hdo14a8q0hqi04lt"
   },
+  connection: {
+    reconnect: true
+  },
   channels: ["twitch"]
 };
 

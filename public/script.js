@@ -71,10 +71,8 @@ function draw(words) {
 
 function wordcloud() {
   return {
-    update: function(words) {
-      layout.words(words.map(function(d) {
-        return {text: d, size: 10 + Math.random() * 90, test: "haha"};
-      }))
+    update: function(map) {
+      layout.words(map)
       .padding(5)
       .rotate(function() { return ~~(Math.random() * 2); })
       .font("Impact")
@@ -87,9 +85,19 @@ function wordcloud() {
 
 function showNewWords(vis) {
     if(words.length >= 200) words = words.splice(100, 200);
-    console.log(words)
-    vis.update(words)
-    setTimeout(function() { showNewWords(vis)}, 3000)
+
+    freqs = {};
+    for(word of words) {
+      if(freqs[word]) freqs[word]++;
+      else freqs[word] = 1;
+    }
+
+    keys = Object.keys(freqs);
+    map = keys.map(function(word) {
+      return {text: word, size: freqs[word] > 16 ? 130 : freqs[word] * 8}
+    });
+    vis.update(map);
+    setTimeout(function() { showNewWords(vis)}, 3000);
 }
 
 var myWordCloud = wordcloud();
