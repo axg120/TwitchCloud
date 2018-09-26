@@ -11,7 +11,7 @@ var server = app.listen(1000, function() {
 //static files
 app.use(express.static("public"));
 
-//twitch embed options
+//twitch chatbot options
 var opts = {
   identity: {
     username: "twitchcloudbot",
